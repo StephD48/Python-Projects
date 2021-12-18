@@ -1,3 +1,10 @@
+#Python 3.10.1
+#
+#Author: Stephanie L Drake
+#
+#Purpose: The Tech Academy Python Course, Creating a Database,
+# using Sqlite3 and Python. Adding specific files into the database that are only .txt files.
+
 import sqlite3
 
 # connecting to sqlite3 database project1.db
