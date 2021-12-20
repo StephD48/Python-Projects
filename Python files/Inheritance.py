@@ -10,7 +10,7 @@ class Animal:
     Number of Legs = ' '
 
 class Animal:
-    #Example of input into the Aminal Class
+    #Example of input by a user into the Animal Class
     Animal Type = 'Amphibian'
     Animal Name = 'Red-Eyed Tree Frog'
     Warm Blooded = 'No'
