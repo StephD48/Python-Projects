@@ -68,7 +68,7 @@ class Staff(Person):
             
 
     
-
+# The following code invokes the methods inside each class for the Person, Student and Staff.
     
 if __name__ == "__main__":
    faculty = Person()
