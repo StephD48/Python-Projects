@@ -8,8 +8,6 @@ class Person:
     def __init__(self):
         #Protected Variable
         self._Faculty = 0
-
-    def __init__(self):
         #Private Variable
         self.__Students = 50
 
@@ -22,6 +20,7 @@ class Person:
         
 # object that makes use of the protected  and  Private variable
 obj = Person()
+print(obj._Faculty)
 obj._Faculty = 100
 print(obj._Faculty)
 obj.getNumber()
