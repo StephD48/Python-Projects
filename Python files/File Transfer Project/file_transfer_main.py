@@ -27,7 +27,7 @@ class ParentWindow(Frame):
     def __init__(self, master, *args, **kwargs): #Defining the init class
         Frame.__init__(self, master, *args, **kwargs)
 
-        #defining the self.master configuration 
+        #defining the self.master config
         self.master = master
         self.master.minsize(500,300)
         self.master.title("File Transfer within last 24 hours")

@@ -14,38 +14,35 @@ import file_transfer_gui
 import file_transfer_main
 
 
-# Defining the getSource function
+
 def getSource(self):
-    sourcePath = filedialog.askdirectory(initialdir="C:/") # defining source path in directory
+    sourcePath = filedialog.askdirectory(initialdir="/",title='Select Folder')
     self.txt_source.insert('0', sourcePath)
-    # Source path for the incoming files
+
     source="C:\\Users\\Stephanie\\Documents\\GitHub\\Python-Projects\\Python files\\File Transfer Project\\Incoming Files" 
 
 
 
-# Defining the getDestination function
+
 def getDestination(self):
-    destinationPath = filedialog.askdirectory(initialdir="C:/")
+    destinationPath = filedialog.askdirectory(initialdir="/",title='Select Destination Folder')
     self.txt_destination.insert('0', destinationPath)
-    # Source path for the Destination files
+
     destination = "C:\\Users\\Stephanie\\Documents\\GitHub\\Python-Projects\\Python files\\File Transfer Project\\Destination Files"
 
-# Defining the copy function
+
 def copy(self):
-    # path where the incoming files are located
-    source = "C:\\Users\\Stephanie\\Documents\\GitHub\\Python-Projects\\Python files\\File Transfer Project\\Incoming Files"
-    # path where the files will be copied to 
-    destination = "C:\\Users\\Stephanie\\Documents\\GitHub\\Python-Projects\\Python files\\File Transfer Project\\Destination Files" 
-    fileNames = os.listdir(source) # Creates a list of all the file names in the directory
+    source = self.txt_source.get() 
+    destination = self.txt_destination.get() 
+    fileNames = os.listdir(source)
     print(fileNames)
 
     for file in fileNames:
-        # path for the file
         Path = os.path.join(source, file)
-        modifiedSec = os.path.getmtime(Path) #time is given in a float
-        modifiedTime = datetime.fromtimestamp(modifiedSec)# converts float into a datetime structure
+        modifySec = os.path.getmtime(Path)
+        modifyTime = datetime.fromtimestamp(modifySec)
         
-        if modifiedTime > (datetime.now() + timedelta(days= -1)):# If date of file within the last 24hrs it will be copied to destination
+        if modifyTime > (datetime.now() + timedelta(days= -1)):
             shutil.copy(Path, destination)
 
         
